@@ -28,6 +28,6 @@
     ]
   },
   "icons": {
-    "32": "chrome/content/icon.png"
+    "32": "chrome/content/default-32.png"
   }
 }
