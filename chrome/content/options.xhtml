@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://messenger/skin/messenger.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://closetabonesc/locale/options.dtd">
+
+<dialog class="options-dialog" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml" id="closetabonesc-prefs" title="Close Tab on Esc Options" buttons="accept">
+
+  <prefpane>
+    <vbox>
+      <checkbox id="gotofirsttab" preference="extensions.CloseTabOnEsc@david-winter.at.gotofirsttab" label="Go back to first tab after close" />
+      <checkbox id="onlymessagetabs" preference="extensions.CloseTabOnEsc@david-winter.at.onlymessagetabs" label="Only apply to message tabs" />
+      <checkbox id="closetabsonexit" preference="extensions.CloseTabOnEsc@david-winter.at.closetabsonexit" label="Close message tabs when closing Thunderbird" />
+    </vbox>
+  </prefpane>
+
+  <script type="application/javascript" src="chrome://global/content/preferencesBindings.js" />
+  <script type="application/javascript" src="options.js" />
+
+</dialog>

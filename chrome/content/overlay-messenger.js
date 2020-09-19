@@ -3,11 +3,11 @@ var closetabonesc = {
   
   startup: function(e) {
     closetabonesc.prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("extensions.CloseTabOnEsc@david-winter.at.");
-    document.getElementById("messengerWindow").addEventListener("keypress", closetabonesc.onKeyPress, false);
+    window.addEventListener("keydown", closetabonesc.onKeyPress, false);
   },
   
   onKeyPress: function(e) { 
-    if (e.keyCode == KeyEvent.DOM_VK_ESCAPE) {
+    if (e.key == "Escape") {
       var tabmail = document.getElementById('tabmail');
       if (tabmail.tabInfo.length > 1) {     
         var idx = tabmail.tabContainer.selectedIndex;
@@ -42,5 +42,13 @@ var closetabonesc = {
   }
 };
 
-window.addEventListener("load", closetabonesc.startup, false);
-window.addEventListener("beforeunload", closetabonesc.beforeUnload, false);
+function onLoad(activatedWhileWindowOpen) {
+  closetabonesc.startup();
+}
+
+function onUnload(deactivatedWhileWindowOpen) {
+  if (!deactivatedWhileWindowOpen) {
+    return;
+  }
+  closetabonesc.beforeUnload();
+}
