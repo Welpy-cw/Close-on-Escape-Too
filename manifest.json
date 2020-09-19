@@ -3,7 +3,7 @@
   "name": "Close on Escape Too",
   "description": "Updated version of David Winter's Close on Escape",
   "version": "2.0",
-  "author": "[Norm Green]",
+  "author": "[Norm Green], adapted to TB78 by Welpy-cw",
   "applications": {
     "gecko": {
       "id": "nrgiii66@gmail.com",
